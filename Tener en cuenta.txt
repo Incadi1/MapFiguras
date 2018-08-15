@@ -1,0 +1,7 @@
+Realizar un nuevo proyecto que permita, tener una interfaz gráfica en JavaFX:
+1) Tenga una opción para crear las figuras geométricas círculos, cuadrados, triángulos
+2) La posibilidad de cambiar colores a las figuras geométricas. 
+3) La posibilidad de limpiar el canvas
+4) la posibilidad de crear transiciones a una de las figuras geométricas (transición circular)
+5) La posibilidad que el usuario observe todo el tiempo las coordenadas del mouse cuando este se 
+encuentre en el canvas. (esto último lo puede hacer imprimiendo en dos labels las coordenadas X y Y del mouse)

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.canvas.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="729.0" prefWidth="701.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tallercg.FXMLDocumentController">
+   <children>
+      <Canvas fx:id="canvas" height="510.0" onMouseClicked="#generarColor" onMouseMoved="#Label" width="701.0" />
+      <Button layoutX="14.0" layoutY="524.0" mnemonicParsing="false" onAction="#GenerarCuadrado" prefHeight="26.0" prefWidth="106.0" text="Cuadrado" />
+      <Button layoutX="14.0" layoutY="566.0" mnemonicParsing="false" onAction="#GenerarTriangulo" prefHeight="26.0" prefWidth="106.0" text="Triangulo" />
+      <Button layoutX="14.0" layoutY="606.0" mnemonicParsing="false" onAction="#GenerarCirculo" prefHeight="26.0" prefWidth="106.0" text="Circulo" />
+      <Button layoutX="149.0" layoutY="524.0" mnemonicParsing="false" onAction="#GenerarCuadradoMovil" prefHeight="31.0" prefWidth="127.0" text="Cuadrado Movil" />
+      <Button layoutX="149.0" layoutY="567.0" mnemonicParsing="false" onAction="#GenerarTrianguloMovil" prefHeight="31.0" prefWidth="127.0" text="Triangulo Movil" />
+      <Button layoutX="149.0" layoutY="606.0" mnemonicParsing="false" onAction="#GenerarCirculoMovil" prefHeight="31.0" prefWidth="127.0" text="Circulo Movil" />
+      <Button layoutX="288.0" layoutY="524.0" mnemonicParsing="false" onAction="#EliminarCuadradoMovil" prefHeight="31.0" prefWidth="191.0" text="Eliminar Cuadrado Movil" />
+      <Button layoutX="288.0" layoutY="566.0" mnemonicParsing="false" onAction="#EliminarTrianguloMovil" prefHeight="31.0" prefWidth="191.0" text="Eliminar Triangulo Movil" />
+      <Button layoutX="288.0" layoutY="606.0" mnemonicParsing="false" onAction="#EliminarCirculoMovil" prefHeight="31.0" prefWidth="191.0" text="Eliminar Circulo Movil" />
+      <ColorPicker fx:id="colorclicker" layoutX="515.0" layoutY="520.0" prefHeight="39.0" prefWidth="140.0" />
+      <Label fx:id="Label" layoutX="481.0" layoutY="622.0" prefHeight="39.0" prefWidth="208.0" />
+      <Button layoutX="520.0" layoutY="582.0" mnemonicParsing="false" onAction="#limpiar" prefHeight="26.0" prefWidth="106.0" text="Limpiar" />
+      <Rectangle fx:id="rec" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="85.0" layoutX="112.0" layoutY="71.0" stroke="BLACK" strokeType="INSIDE" width="85.0" />
+      <Polygon fx:id="tri" fill="DODGERBLUE" layoutX="162.0" layoutY="309.0" stroke="BLACK" strokeType="INSIDE">
+        <points>
+          <Double fx:value="-50.0" />
+          <Double fx:value="40.0" />
+          <Double fx:value="50.0" />
+          <Double fx:value="40.0" />
+          <Double fx:value="0.0" />
+          <Double fx:value="-60.0" />
+        </points>
+      </Polygon>
+      <Circle fx:id="cir" fill="DODGERBLUE" layoutX="317.0" layoutY="202.0" radius="46.0" stroke="BLACK" strokeType="INSIDE" />
+   </children>
+</AnchorPane>
