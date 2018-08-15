@@ -1,5 +1,5 @@
 
-package tallercg;
+package mapfiguras;
 
 import java.net.URL;
 import java.util.ResourceBundle;
