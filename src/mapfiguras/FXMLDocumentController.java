@@ -1,7 +1,9 @@
 
 package mapfiguras;
 
+import java.io.FileWriter;
 import java.net.URL;
+import java.util.HashMap;
 import java.util.ResourceBundle;
 import javafx.animation.PathTransition;
 import javafx.event.ActionEvent;
@@ -19,6 +21,10 @@ import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
 import javax.swing.JOptionPane;
+import org.jdom2.Document;
+import org.jdom2.Element;
+import org.jdom2.output.Format;
+import org.jdom2.output.XMLOutputter;
 
 public class FXMLDocumentController implements Initializable {
     @FXML
@@ -206,6 +212,36 @@ public class FXMLDocumentController implements Initializable {
 
         }
 
+    }
+    public static boolean GuardarFiguras(HashMap<String, Figuras2D> Figuras){
+        boolean g = false;
+        
+        try{
+            Element root = new Element("figuras");
+            Document doc = new Document(root);
+
+            for (int i = 0; i < Figuras.size(); i++) {
+                Element objE = new Element("Figura");
+                    objE.setAttribute("x", String.valueOf(Figuras.get("figura"+i).getPosition().getX()));
+                    objE.setAttribute("y", String.valueOf(Figuras.get("figura"+i).getPosition().getY()));
+                    objE.setAttribute("type", String.valueOf(Figuras.get("figura"+i).getType()));
+                    objE.setAttribute("size", String.valueOf(Figuras.get("figura"+i).getSize()));
+                    objE.setAttribute("red", String.valueOf(Figuras.get("figura"+i).getColor().getRed()));
+                    objE.setAttribute("green", String.valueOf(Figuras.get("figura"+i).getColor().getGreen()));
+                    objE.setAttribute("blue", String.valueOf(Figuras.get("figura"+i).getColor().getBlue()));
+                    objE.setAttribute("opacity", String.valueOf(Figuras.get("figura"+i).getColor().getOpacity()));
+                    root.addContent(objE);
+                }
+            XMLOutputter xmlOutput = new XMLOutputter();
+            xmlOutput.setFormat(Format.getPrettyFormat());
+            xmlOutput.output(doc, new FileWriter("../Taller/Figuras.xml"));
+            g = true;
+            
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        
+        return g;
     }
     
     
