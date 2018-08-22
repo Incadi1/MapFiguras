@@ -1,8 +1,8 @@
-package mapfiguras;
+package Modelo;
 
 import javafx.scene.paint.Color;
 
-public class Figuras2D {
+public class Figuras2D extends punto2D{
 
     private punto2D Posicion;
     private Color Color;
@@ -17,6 +17,7 @@ public class Figuras2D {
         this.Color = Color;
         this.Tipo = Tipo;
         this.Tamaño = Tamaño;
+        
     }
 
     public punto2D getPosicion() {

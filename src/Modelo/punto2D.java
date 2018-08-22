@@ -1,5 +1,5 @@
 
-package mapfiguras;
+package Modelo;
 
 public class punto2D {
     double x;

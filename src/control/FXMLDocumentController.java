@@ -1,7 +1,6 @@
 
 package control;
 
-import java.io.FileWriter;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.ResourceBundle;
@@ -22,14 +21,7 @@ import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
 import javax.swing.JOptionPane;
 
-import mapfiguras.Figuras2D;
-import mapfiguras.punto2D;
-import control.XMLcontroller;
-
-import org.jdom2.Document;
-import org.jdom2.Element;
-import org.jdom2.output.Format;
-import org.jdom2.output.XMLOutputter;
+import Modelo.Figuras2D;
 
 public class FXMLDocumentController implements Initializable {
     @FXML
@@ -223,11 +215,10 @@ public class FXMLDocumentController implements Initializable {
     }
     
     
-    
-    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         FigGeom = new HashMap<>();
+        
         lienzo = canvas.getGraphicsContext2D();
         cir.setVisible(false);
         rec.setVisible(false);
