@@ -1,5 +1,5 @@
 
-package mapfiguras;
+package control;
 
 import java.io.FileWriter;
 import java.net.URL;
@@ -21,6 +21,11 @@ import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
 import javax.swing.JOptionPane;
+
+import mapfiguras.Figuras2D;
+import mapfiguras.punto2D;
+import control.XMLcontroller;
+
 import org.jdom2.Document;
 import org.jdom2.Element;
 import org.jdom2.output.Format;
@@ -50,6 +55,9 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private ColorPicker colorclicker;
     
+    private HashMap<String, Figuras2D> FigGeom;
+   
+    
     @FXML
     private void limpiar(ActionEvent event) 
     {
@@ -63,7 +71,7 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private void Label(MouseEvent event) 
     {
-       Label.setText("X= "+event.getX()+" , Y= "+event.getY());         
+       Label.setText("X: "+event.getX()+" , Y: "+event.getY());         
     }
     
     @FXML
@@ -213,41 +221,13 @@ public class FXMLDocumentController implements Initializable {
         }
 
     }
-    public static boolean GuardarFiguras(HashMap<String, Figuras2D> Figuras){
-        boolean g = false;
-        
-        try{
-            Element root = new Element("figuras");
-            Document doc = new Document(root);
-
-            for (int i = 0; i < Figuras.size(); i++) {
-                Element objE = new Element("Figura");
-                    objE.setAttribute("x", String.valueOf(Figuras.get("figura"+i).getPosition().getX()));
-                    objE.setAttribute("y", String.valueOf(Figuras.get("figura"+i).getPosition().getY()));
-                    objE.setAttribute("type", String.valueOf(Figuras.get("figura"+i).getType()));
-                    objE.setAttribute("size", String.valueOf(Figuras.get("figura"+i).getSize()));
-                    objE.setAttribute("red", String.valueOf(Figuras.get("figura"+i).getColor().getRed()));
-                    objE.setAttribute("green", String.valueOf(Figuras.get("figura"+i).getColor().getGreen()));
-                    objE.setAttribute("blue", String.valueOf(Figuras.get("figura"+i).getColor().getBlue()));
-                    objE.setAttribute("opacity", String.valueOf(Figuras.get("figura"+i).getColor().getOpacity()));
-                    root.addContent(objE);
-                }
-            XMLOutputter xmlOutput = new XMLOutputter();
-            xmlOutput.setFormat(Format.getPrettyFormat());
-            xmlOutput.output(doc, new FileWriter("../Taller/Figuras.xml"));
-            g = true;
-            
-        }catch(Exception e){
-            e.printStackTrace();
-        }
-        
-        return g;
-    }
+    
     
     
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        FigGeom = new HashMap<>();
         lienzo = canvas.getGraphicsContext2D();
         cir.setVisible(false);
         rec.setVisible(false);

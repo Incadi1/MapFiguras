@@ -1,38 +1,30 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package mapfiguras;
 
 import javafx.scene.paint.Color;
 
-/**
- *
- * @author sebastian.carmona
- */
 public class Figuras2D {
-     private punto2D Position;
+
+    private punto2D Posicion;
     private Color Color;
-    private String Type;
-    private double Size;
+    private String Tipo;
+    private double Tamaño;
 
     public Figuras2D() {
     }
 
-    public Figuras2D(punto2D Position, Color Color, String Type, double Size) {
-        this.Position = Position;
+    public Figuras2D(punto2D Posicion, Color Color, String Tipo, double Tamaño) {
+        this.Posicion = Posicion;
         this.Color = Color;
-        this.Type = Type;
-        this.Size = Size;
+        this.Tipo = Tipo;
+        this.Tamaño = Tamaño;
     }
 
-    public punto2D getPosition() {
-        return Position;
+    public punto2D getPosicion() {
+        return Posicion;
     }
 
-    public void setPosition(punto2D Position) {
-        this.Position = Position;
+    public void setPosicion(punto2D Posicion) {
+        this.Posicion = Posicion;
     }
 
     public Color getColor() {
@@ -43,27 +35,20 @@ public class Figuras2D {
         this.Color = Color;
     }
 
-    public String getType() {
-        return Type;
+    public String getTipo() {
+        return Tipo;
     }
 
-    public void setType(String Type) {
-        this.Type = Type;
+    public void setTipo(String Tipo) {
+        this.Tipo = Tipo;
     }
 
-    public double getSize() {
-        return Size;
+    public double getTamaño() {
+        return Tamaño;
     }
 
-    public void setSize(double Size) {
-        this.Size = Size;
+    public void setTamaño(double Tamaño) {
+        this.Tamaño = Tamaño;
     }
 
-    @Override
-    public String toString() {
-        return "Figuras2D{" + "Position=" + Position + ", Color=" + Color + ", Type=" + Type + ", Size=" + Size + '}';
-    }
-    
-    
-    
 }
